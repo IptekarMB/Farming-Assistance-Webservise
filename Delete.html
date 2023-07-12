@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="">
+    
+</head>
+<body class="bg-success">
+    <form action="Delete.php" method="POST">
+    <div class="container-fluid p-5 m-3 ">
+        <div class="row p-3">
+            <div class="col-3 pb-3">
+
+            </div> 
+          <div class="col-lg-4 col-md-6 col-sm-12 shadow m-3 bg-warning rounded-pill">
+              <div class="row p-3 text-center ">
+                  <h3 class="bg-dark text-white rounded-pill h1">  DELETE USER ACCOUNT  </h3>
+
+              </div>
+              <div class="row p-3">
+                  <div class="col-10">
+                  <input type="text" name="id" id="id"  class="form-control shadow" placeholder="Enter Suplier Username" required>
+                </div> 
+                </div>
+                <div class="row p-3">
+                    <div class="col-10">
+                        <select name="mode" id="mode" class="form-control ">
+                            <option value="select" selected>--Select User Mode--</option>
+                            <option value="Farmer"> Farmer </option>
+                            <option value="Supplier"> Supplier </option>
+                            <option value="Admin"> Admin </option>
+                        </select>
+                    </div>
+                </div>
+                
+                  <div class="row p-3">
+                    <div class="col-10">
+                  <input type="password" name="pass1" id="pass1" class="form-control shadow" placeholder="Enter Password" required>
+                    </div>
+                    <div class="col-2">
+                  <button type="button" class="form-control" id="password" onclick="viewPassword1();"><i class="bi bi-eye-slash-fill"></i></button>
+                </div>
+                </div>
+                <div class="row p-2">
+                  <a href="forgetpass.html" > <h4 class="text-dark text-center"> <u> Forget Password ? </u></h4> </a>
+                </div>
+                <div class="row p-5">
+                  <div class="col-6 shadow p-2">
+                  <button type="submit" class="btn w-100 btn-dark" onclick="validateForm();"> DELETE ACCOUNT </button>
+                </div>
+                <div class="col-3 ">
+
+                </div>
+                <div class="col-3 shadow p-2">
+                  <button type="reset" class="btn btn-dark  w-100">RESET</button>
+
+                </div>
+               
+              </div>
+
+              </div>
+
+          </div>  
+          <div class="col-4">
+
+          </div>
+    </div>
+</div>
+</form>
+    <script>
+      function viewPassword1()
+      {
+        var pwd1=document.getElementById("pass1");
+        if(pwd1.type==="password")
+        {
+          pwd1.type="text";
+        }
+        else{
+          pwd1.type='password';
+        }
+      }
+       
+         // pass=document.addEventListener("click",checkConfrim);
+          function validatForm()
+          {
+        var pass=document.getElementById("check").value;
+        var usid=document.getElementById("uid").value;
+        var pass1=document.getElementById("pass1").value;
+        
+            // var uid=document.getElementById("uid").value;
+            // var pa=document.getElementById("pass1").value;
+            if(usid ===' ')
+            {
+              alert("please Provide UserId");
+              return false;
+            }
+            if(pass1 ==='')
+            {
+              alert("Please provide password ");
+              return false;
+            }
+            if(pass2==='')
+            {
+              alert("Please Provide Confrim Password..");
+              return false;
+            }          
+            if(pass1.length<8)
+            {
+              alert("The length of the password must be greater than 8 character");
+              return false;
+            }
+            if(pass1.indexof('$')=== -1 &&
+               pass1.indexof('#')=== -1 &&
+               pass1.indexof('@')=== -1 &&
+               pass1.indexof('_')=== -1 &&
+               pass1.indexof('&')=== -1 &&
+               pass1.indexof('^')=== -1 )
+               {
+                 alert("passwor must be cointain the atleast one speacial symbol");
+                 return false;
+
+               }
+               if(pass1 !== pass2)
+             {
+                 alert(" You Entered Password Is Not Same ! \n Please Provide Pasword Must be same");
+                 return false;
+             }
+             else
+             {
+                 alert("registration Successful.....");
+                 return false;
+
+             }
+
+          }
+          pass.addEventListener("keypress",validatForm);
+           
+    </script>
+</body>
+</html>

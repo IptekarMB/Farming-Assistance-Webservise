@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Forme Home Page </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <style>
+    /* .body
+    {
+      background-image: url(back.jpg);
+
+    } */
+
+  </style>
+</head>
+
+<body class="body">
+  <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+        aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#"> <i class="bi bi-bricks"> </i> शेतकरी </a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="homeFarmer.html"> <i class="bi bi-house-fill"></i> Home
+            </a>
+          </li>
+          <li class="nav-item dropdown active">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-brightness-high-fill"></i> User
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="login.html"> Sing In </a></li>
+              <li><a class="dropdown-item" href="homeFarmer.html"> Sing out </a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="Registration.html"> User Register </a></li>
+            </ul>
+          </li>
+          <li class="d-flex nav-item">
+            <!-- <button class="btn-dark text-center text-white rounded-pill"> -->
+            <a href="complaint.html" class="text-dark"> <i class="bi bi-disc"></i> Complaint </a>
+            <!-- </button> -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="helpdesk.html"> <i class="bi bi-question-diamond-fill"></i> Help
+              desk </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"> <i class="bi bi-box-arrow-in-left"></i> Crops
+              Information </a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-dark" type="submit">Search</button>
+        </form>
+        <ul>
+          <li class="d-flex">
+            <button class="btn-dark text-center text-white rounded-pill">
+              <a href="homeFarmer.html" class="text-white">Log-out</a>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluide">
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6 p-3 m-3">
+        <form action="farmerHome.php" method="POST">
+          <h3 class=" text-center text-white bg-dark rounded-pill "> Selling Crops information </h3>
+          <!-- <label for="cName" class="label text-center"> Farmer Name :  </label> -->
+          <input type="text" placeholder=" Enter  Farmer Name " class=" form-control rounded-pill p-3 m-2" name="name"
+            id="name" required>
+          <!-- <label for="cName" class="label text-center"> Mobile Number :  </label> -->
+          <input type="text" placeholder=" Enter  Mobile Number  " class=" form-control rounded-pill p-3 m-2"
+            name="contact" id="cName" required>
+          <input type="email" placeholder=" Enter  Email ID   " class=" form-control rounded-pill p-3 m-2" name="email"
+            id="email" required>
+          <input type="address" placeholder=" Enter  Address  " class=" form-control rounded-pill p-3 m-2"
+            name="address" id="address" required>
+          <label for="cName" class="label text-center"> Crops Name : </label>
+          <input type="text" placeholder=" Enter Crops Name  " class=" form-control rounded-pill p-3 m-2" name="cName"
+            id="cName" required>
+          <label for="cQty"> Quantity Of Crops : </label>
+          <div class="input-group p-2 m-3">
+            <!-- <input type="text" placeholder=" Enter Quantity  Of Crops  " class=" form-control rounded-pill p-3 m-2" name="cQty" id="cQty"> -->
+
+            <input type="text" class="form-control rounded-pill" required placeholder=" Enter Quantity  Of Crops  "
+              name="cQty" id="cQty" aria-label="Text input with segmented dropdown button">
+            <label class="input-group-text" for="inputGroupFile02">.Quantan</label>
+          </div>
+
+          <label for="cRate"> Which Rate Are You Want Sell This Crops : </label>
+          <input type="text" placeholder=" Enter Rate Of The Crops  " required
+            class=" form-control rounded-pill p-3 m-2" name="cRate" id="cRate">
+          <label for="cImage"> Upload Crops picture : </label>
+          <input type="file" class="form-control rounded-pill p-3 m-2" required name="cImage" id="cImage">
+          <label for="cImage2"> Upload One More Crops picture : </label>
+          <input type="file" class="form-control rounded-pill p-3 m-2" required name="cImage2" id="cImage2">
+          <!-- <input type="auido" class=""> -->
+          <div class="row">
+            <div class="col-6">
+              <input type="submit" name="submit" id="submit" required class="btn btn-success rounded-pill w-50 mt-4">
+            </div>
+            <div class="col-6">
+              <input type="" name="clear" id="clear" value="Clear" required
+                class="btn btn-success rounded-pill w-50 mt-4">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
